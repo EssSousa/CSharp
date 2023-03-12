@@ -1,23 +1,45 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Login
 {
-    class person
-    {  
-        public string name = "";
-        public string password = "";
-        public string email = "";
+    public static class Global
+    {
+        public static string name;
     }
 
-    class Programa
+    public class Usuario
     {
+        public string NomeUsuario { get; set; }
+        public string Senha { get; set; }
+
+        public Usuario(string nomeUsuario, string senha)
+        {
+            NomeUsuario = nomeUsuario;
+            Senha = senha;
+        }
+    }
+
+
+    class Programa
+    { 
+
+        static void registar()
+        {
+
+
+            Usuario user = new Usuario("Sousa", "12345678");
+            Console.Write(user.NomeUsuario);
+            Console.Write(user.Senha);
+
+            string Nomeusuario = user.NomeUsuario;
+            string Senha = user.Senha;
+        }
         static void Main()
         {
-            person user = new person();
-            user.name = Console.ReadLine();
-            user.password = Console.ReadLine();
-            user.email = Console.ReadLine();
+            registar();
         }
     }
 }
