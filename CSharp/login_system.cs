@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Login
 {
     class person
-    {
-        public string name;
-        public string password;
-        public string email;
+    {  
+        public string name = "";
+        public string password = "";
+        public string email = "";
     }
 
     class Programa
